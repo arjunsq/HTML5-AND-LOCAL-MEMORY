@@ -10,11 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="script.js"></script>  
+  <link rel="stylesheet" href="styles.css">
 
-<style type="text/css">
-	p{
-    color: red;
-  }
 </style>
 
 </head>
@@ -35,41 +32,90 @@
 </div>
   
 <div class="container">
-  <h1 style="text-align: center"> REGISTER HERE</h1>
+  
   <div class="row">
-    <div class="col-sm-4">
-    
+    <div class="col-sm-8">
+       <button onclick="cleardata()" class="btn btn-primary btn-block btn-lg">CLEAR ALL DATA</button> 
+      <div id="result"></div>
+      <table class="table" id="myTable">
+        <thead>
+          <tr>
+            <th>SI No:</th>
+            <th>Gender</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Date of Birth</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>Mr</td>
+            <td>Example</td>
+            <td>some@example.com</td>
+            <td>12someone</td>
+            <td>2018-06-09</td>
+            <td>India</td>
+          </tr>
+        </tbody>
+  </table>
+
     </div>
+
+
+
+
+
     <div class="col-sm-4">
+      <h1 style="text-align: center"> REGISTER HERE</h1>
           <div class="form-group">
-            <form name = "signup" action="http://demo6835492.mockable.io/sendEmail" onsubmit="return validatesignup()" method="POST" >
+            <form name = "signup" method="POST" >
             
+            <div class="radio" id="genders" >
+              
+              <label><input type="radio" name="gender" value="Mr." id="Mr." required>Mr. &nbsp;&nbsp;</label>
+              <label><input type="radio" name="gender" value="Ms." id="Ms."required>Ms. &nbsp;&nbsp;</label>
+              <label><input type="radio" name="gender" value="Mx." id="Mx." required>Mx.</label><br>
+            
+            </div>
+            <p id="gender" ></p>
 
 
             <label for="usr">Name:</label>
-            <input type="text" name="name" placeholder="Enter name" class="form-control" id="name" ><br>
+            <input type="text" name="name" placeholder="Enter name" id="name" class="form-control"><br>
             <p id="vname" ></p>
 
             <label for="email">Email:</label>
-            <input type="text" placeholder= "Enter email" class="form-control" id="email"><br>
+            <input type="email" placeholder= "Enter email" class="form-control" id="email"><br>
             <p id="vmail" ></p>
 
             <label for="pwd">Password:</label>
             <input type="password" placeholder= "Enter password" class="form-control" id="password"><br>
             <p id="vpass" ></p>
 
+            <label for="dob">Date of Birth:</label>
+            <input type="date" class="form-control" id="dob"  required><br>
+            <p id="vdob" ></p>
+
+
+            <label for="country">Your Country</label>
+            <select class="form-control countrylist" placeholder="" id="country" required></select><br>
+            <p id="vcountry" ></p>
+          
+
+
             <br>
 
-            <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+            <button type="button" onclick="validatesignup()" class="btn btn-success btn-block">Sign Up</button>
 
 
             
             </form>
           </div>  
     </div>
-    <div class="col-sm-4">
     
-    </div>
 
   </div>
 </div>
